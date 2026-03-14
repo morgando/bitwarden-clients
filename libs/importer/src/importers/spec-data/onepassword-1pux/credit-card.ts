@@ -318,6 +318,111 @@ export const CreditCardData: ExportData = {
                 pgrng: false,
               },
             },
+            {
+              uuid: "ab12cdefgh34ijklmn56opqrst",
+              favIndex: 0,
+              createdAt: 1619465282,
+              updatedAt: 1619465447,
+              state: "active",
+              categoryUuid: "002",
+              details: {
+                loginFields: [],
+                notesPlain: "",
+                sections: [
+                  {
+                    title: "",
+                    fields: [
+                      {
+                        title: "cardholder name",
+                        id: "cardholder",
+                        value: {
+                          string: "Good Boy",
+                        },
+                        guarded: true,
+                        multiline: false,
+                        dontGenerate: false,
+                        inputTraits: {
+                          keyboard: "default",
+                          correction: "default",
+                          capitalization: "words",
+                        },
+                      },
+                      {
+                        title: "type",
+                        id: "type",
+                        value: {
+                          creditCardType: "visa",
+                        },
+                        guarded: true,
+                        multiline: false,
+                        dontGenerate: false,
+                        inputTraits: {
+                          keyboard: "default",
+                          correction: "default",
+                          capitalization: "default",
+                        },
+                      },
+                      {
+                        title: "number",
+                        id: "ccnum",
+                        value: {
+                          creditCardNumber: "4111 1111 1111 1111",
+                        },
+                        guarded: true,
+                        clipboardFilter: "0123456789",
+                        multiline: false,
+                        dontGenerate: false,
+                        inputTraits: {
+                          keyboard: "numberPad",
+                          correction: "default",
+                          capitalization: "default",
+                        },
+                      },
+                      {
+                        title: "verification number",
+                        id: "cvv",
+                        value: {
+                          concealed: "737",
+                        },
+                        guarded: true,
+                        multiline: false,
+                        dontGenerate: true,
+                        inputTraits: {
+                          keyboard: "numberPad",
+                          correction: "default",
+                          capitalization: "default",
+                        },
+                      },
+                      {
+                        title: "expiry date",
+                        id: "expiry",
+                        value: {
+                          monthYear: 202712,
+                        },
+                        guarded: true,
+                        multiline: false,
+                        dontGenerate: false,
+                        inputTraits: {
+                          keyboard: "default",
+                          correction: "default",
+                          capitalization: "default",
+                        },
+                      },
+                    ],
+                  },
+                ],
+                passwordHistory: [],
+              },
+              overview: {
+                subtitle: "4111 **** 1111",
+                tags: [],
+                title: "my dog's credit card",
+                url: "",
+                ps: 0,
+                pbe: 0.0,
+                pgrng: false,
+              },
+            },
           ],
         },
       ],

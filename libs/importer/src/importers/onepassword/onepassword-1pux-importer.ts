@@ -433,7 +433,7 @@ export class OnePassword1PuxImporter extends BaseImporter implements Importer {
 
   private fillCreditCard(field: FieldsEntity, fieldValue: string, cipher: CipherView): boolean {
     if (this.isNullOrWhitespace(cipher.card.number) && field.id === "ccnum") {
-      cipher.card.number = fieldValue;
+      cipher.card.number = fieldValue.replace(/\s+/g, "");
       cipher.card.brand = CardView.getCardBrandByPatterns(cipher.card.number);
       return true;
     }

@@ -210,6 +210,26 @@ describe("1Password 1Pux Importer", () => {
     validateCustomField(cipher.fields, "issue number", "123456");
   });
 
+  it("should handle 1pux credit card records that are formatted with spaces", async () => {
+    const importer = new OnePassword1PuxImporter();
+    const result = await importer.parse(CreditCardDataJson);
+    expect(result != null).toBe(true);
+
+    // skip the first card, get the second
+    result.ciphers.shift();
+    const cipher = result.ciphers.shift();
+
+    expect(cipher.name).toEqual("my dog's credit card");
+
+    const card = cipher.card;
+    expect(card.cardholderName).toEqual("Good Boy");
+    expect(card.number).toEqual("4111111111111111");
+    expect(card.code).toEqual("737");
+    expect(card.brand).toEqual("Visa");
+    expect(card.expMonth).toEqual("12");
+    expect(card.expYear).toEqual("2027");
+  });
+
   it("should create identity records", async () => {
     const importer = new OnePassword1PuxImporter();
     const result = await importer.parse(IdentityDataJson);
